@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;Crawler.java&apos; to &apos;URLReader.java&apos;&#x0A;- Original project: &apos;WebCrawler&apos;&#x0A;- Original element: &apos;Crawler.java&apos;&#x0A;- Renamed element: &apos;URLReader.java&apos;" description="Rename compilation unit &apos;Crawler.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{Crawler.java" name="URLReader.java" references="false" stamp="1430342103317" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+
+public class test {
+	Map newMap = new URLReader("genesis",1);
+}

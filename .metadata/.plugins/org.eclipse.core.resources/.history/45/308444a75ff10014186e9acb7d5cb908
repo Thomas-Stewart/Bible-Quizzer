@@ -1,0 +1,4 @@
+import java.util.Map;
+public class test {
+	URLReader Genesis = new URLReader("genesis",1);
+}

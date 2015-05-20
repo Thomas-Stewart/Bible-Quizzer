@@ -1,0 +1,36 @@
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+
+public class test {
+	public static void main(String args[]){
+		Random rand = new Random();
+		Scanner in = new Scanner(System.in);
+		String answer;
+
+		do{
+			String titleAnswer = BookInfo.getRandBook();
+			int randVerse = rand.nextInt(14 - 1)+1;
+			URLReader bibleBook = new URLReader(titleAnswer,1);
+		
+			System.out.println("***************************************");
+			System.out.println("Where does the following verse belong?");
+			System.out.println(bibleBook.verses.get(randVerse));
+			System.out.println("\nA. " + titleAnswer);
+			System.out.println("B. " + BookInfo.getRandBook());
+			System.out.println("C. " + BookInfo.getRandBook());
+			System.out.println("D. " + BookInfo.getRandBook());
+			System.out.println("***************************************");
+	
+			answer = in.nextLine();
+			
+			if (answer == "A\n" || answer == "a"){
+				System.out.println("Congratulations! You're basically a saint.");
+			}
+			else{
+				System.out.println("Bummer dude. Go read your Bible.");
+			}
+		}while(answer != "q" || answer != "Q");
+		in.close();
+	}
+}

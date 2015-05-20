@@ -1,0 +1,89 @@
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+
+public class test {
+	public static void main(String args[]){
+		Random rand = new Random();
+		Scanner in = new Scanner(System.in);
+		String answer;
+
+		do{
+			String titleAnswer,badTitle1,badTitle2,badTitle3;
+			do{
+				
+			titleAnswer = BookInfo.getRandBook();
+			badTitle1= BookInfo.getRandBook();
+			badTitle2= BookInfo.getRandBook();
+			badTitle3= BookInfo.getRandBook();
+			if(titleAnswer.equals(badTitle1) || titleAnswer.equals(badTitle2) || titleAnswer.equals(badTitle3)
+					|| badTitle1.equals(badTitle2) || badTitle1.equals(badTitle3) ||  badTitle2.equals(badTitle3)){
+				System.out.println("");
+			}
+			}while(true);//titleAnswer.equals(badTitle1) || titleAnswer.equals(badTitle2) || titleAnswer.equals(badTitle3)
+					//|| badTitle1.equals(badTitle2) || badTitle1.equals(badTitle3) ||  badTitle2.equals(badTitle3));
+			
+			URLReader bibleBook = new URLReader(titleAnswer,1);
+			int randVerse = rand.nextInt(bibleBook.verses.size() - 1)+1;
+		
+			System.out.println("***************************************");
+			System.out.println("Where does the following verse belong?");
+			System.out.println("");
+			System.out.println("\""+bibleBook.verses.get(randVerse)+"\"");
+			int randChoice = rand.nextInt(4-1)+1;
+			switch (randChoice){
+			case 1:
+				System.out.println("\nA. " + titleAnswer);
+				System.out.println("B. " + BookInfo.getRandBook());
+				System.out.println("C. " + BookInfo.getRandBook());
+				System.out.println("D. " + BookInfo.getRandBook());
+				break;
+			case 2:
+				System.out.println("\nA. " + BookInfo.getRandBook());
+				System.out.println("B. " + titleAnswer);
+				System.out.println("C. " + BookInfo.getRandBook());
+				System.out.println("D. " + BookInfo.getRandBook());
+				break;
+			case 3:
+				System.out.println("\nA. " + BookInfo.getRandBook());
+				System.out.println("B. " + BookInfo.getRandBook());
+				System.out.println("C. " + titleAnswer);
+				System.out.println("D. " + BookInfo.getRandBook());
+				break;
+			case 4:
+				System.out.println("\nA. + BookInfo.getRandBook()");
+				System.out.println("B. " + BookInfo.getRandBook());
+				System.out.println("C. " + BookInfo.getRandBook());
+				System.out.println("D. "  + titleAnswer);
+				break;
+			}
+			System.out.println("***************************************");
+	
+			answer = in.nextLine();
+			
+			if ((answer.equals("A") || answer.equals("a")) &&
+					randChoice == 1){
+				System.out.println("Congratulations! You're basically a saint.");
+			}
+			else if ((answer.equals("B") || answer.equals("b")) &&
+					randChoice == 2){
+				System.out.println("Congratulations! You're basically a saint.");
+			}
+			else if ((answer.equals("C") || answer.equals("c")) &&
+					randChoice == 3){
+				System.out.println("Congratulations! You're basically a saint.");
+			}
+			else if ((answer.equals("D") || answer.equals("d")) &&
+					randChoice == 4){
+				System.out.println("Congratulations! You're basically a saint.");
+			}
+			else{
+				System.out.println("Bummer dude. Go read your Bible.");
+				System.out.println("The correct answer was: " + titleAnswer);
+			}
+			
+			System.out.println("Loading next question...");
+		}while(!answer.equals("q") || !answer.equals("Q"));
+		in.close();
+	}
+}

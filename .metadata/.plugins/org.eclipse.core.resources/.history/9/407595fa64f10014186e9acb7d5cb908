@@ -1,0 +1,11 @@
+import java.util.Map;
+public class test {
+	
+	public static void main(String args[]){
+		URLReader Genesis = new URLReader(BookInfo.getRandBook(),1);
+	
+		for (int i = 1; i < Genesis.verses.size(); i++){
+			System.out.println(Genesis.verses.get(i));
+		}
+	}
+}
